@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 140px 14% 40px;
+}
+
+body {
+    background: #001e4d;
+}
+
+/*Header*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 9% 10px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; 
+}
+
+.header.sticky {
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 40px;
+    color: black;
+    font-weight: 600;
+    cursor: default;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+span {
+    color: #0ef;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+    margin-left: 44px;
+}
+
+.home::before,
+.about::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0ef;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    cursor: pointer;
+}
+
+.home:hover::before,
+.about:hover::before {
+    width: 100%;
+}
+
+#menu-icon {
+    font-size: 48px;
+    color: var(--text-color);
+    display: none;
+}
+
+.login {
+    background-color: #0ef;
+    padding: 5px 25px;
+    border-radius: 10px;
+}
+
+
+.app {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 200px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.app h1{
+    font-size: 25px;
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2{
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.btn{
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover:not([disabled]){
+    background: #b0b0b0;
+    color: #fff;
+}
+
+.btn:disabled{
+    cursor: no-drop;
+}
+
+#next-btn{
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+.correct {
+    background: #9aeabc;
+}
+
+.incorrect {
+    background: #ff9393;
+}
+
+
+
+
+
+
+
+
+
+
+/* Breakpoints */
+@media (max-width: 1100px) {
+
+    body {
+        overflow:hidden;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    #menu-icon:hover{
+        cursor: pointer;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 16px 3%;
+        background: var(--bg-color);
+        border-top: 2px solid rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        display: none;
+        background-color: #fff;
+    }
+
+    .navbar.active{
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 24px;
+        margin: 40px;
+        text-align: center;
+    }
+
+    .home:hover::before,
+    .about:hover::before {
+        width: 0;
+    }
+
+    .login {
+        background-color: transparent;
+    }
+
+    .projects-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+
+    .div1, .div2, .div3, .div4, .div5, .div6 {
+        grid-area: unset;
+    }
+
+}
